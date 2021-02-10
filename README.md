@@ -50,6 +50,7 @@ The user can choose how to treat missing values in the numeric variables used fo
 
 Clustering is useful in identifying groups of similar entries in the table. Combined with the coloring and categorization options, the user can explore the reasons behind the similarities found in the data points and identify important relationships between variables.
 
+The code from this section has been refactored from Htpdvis shiny app. [Source here](https://github.com/htpmod/HTPmod-shinyApp.git)
 ### Panel Data
 
 This is a panel data creation tool that turns the visit time into a timestamp and allows the user to construct a time-series longitudinal panel according to preferences. User can either cut off time points and aggregate data for each patient at each time interval, or keep all the time points.
