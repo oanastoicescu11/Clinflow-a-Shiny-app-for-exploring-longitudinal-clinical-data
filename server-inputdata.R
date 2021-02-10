@@ -60,7 +60,7 @@ output$upload_options <- renderUI(if (input$own_data == TRUE) {
 } else{
     helpText(
         "Demo data is from the Mayo Clinic trial in primary biliary cirrhosis (PBC) of the liver,
-                available in R package <survival>"
+                available in R package <survival>", tags$a(tags$a(href="https://aasldpubs.onlinelibrary.wiley.com/doi/abs/10.1002/hep.1840200120", "Details here."))
     )
 })
 #render table and summaries
