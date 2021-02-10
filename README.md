@@ -6,7 +6,7 @@ An online demo of this app can be found [here](https://oanastoicescu11.shinyapps
 - Download the source code files
 - Source the Libraries.R file
 - Use the command:
-  `shiny::runApp()`
+  `shiny::runApp(launch.browser = TRUE)` to run the app in your default browser that supports WebGL (recommended: Google Chrome, Mozilla Firefox)
 
 ### Input
 The applicaiton expects a csv or tsv file as input. 
