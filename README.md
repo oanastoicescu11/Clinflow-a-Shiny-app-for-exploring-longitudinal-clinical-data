@@ -2,8 +2,8 @@
 ## Online demo
 An online demo of this app can be found [here](https://oanastoicescu11.shinyapps.io/Clinflow-a-Shiny-app-for-exploring-longitudinal-clinical-data/)
 ## To run locally:
-- Download the source code
 - Install the R software on your computer. R version 3.6.3 can be found [here]( https://cran.r-project.org/bin/windows/base/old/3.6.3/)
+- Download the source code files
 - Source the Libraries.R file
 - Use the command:
   `shiny::runApp()`
