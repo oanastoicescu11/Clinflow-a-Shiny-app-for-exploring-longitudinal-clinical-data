@@ -19,7 +19,7 @@ output$range_var <-  renderUI({
       ))
     selectInput(
       "var_range",
-      label = "choose a time var",
+      label = "Choose a time variable",
       choices = variable_choices
       ,
       multiple = FALSE
@@ -47,15 +47,10 @@ output$newvar_params <- renderUI({
       ))
     req(input$var_range)
     tagList(
-      # if(is.ordered(nonconstdata[, input$var_range])){
-      #     sliderInput("age_range",label = "select time range of visits to aggregate",
-      #                 min = 0, max = length(unique(nonconstdata[, input$var_range])), step = 1,
-      #                 value = nonconstdata[, input$var_range])
-      #
-      # }else{
+      
       sliderInput(
         "age_range",
-        label = "select time range of visits to aggregate",
+        label = "Select time range of visits to aggregate",
         min = min(nonconstdata[, input$var_range], na.rm = T),
         max = max(nonconstdata[, input$var_range], na.rm = T),
         step = 1,
@@ -65,7 +60,7 @@ output$newvar_params <- renderUI({
       # },
       selectInput(
         "var_to_apply_func",
-        label = "choose var",
+        label = "Choose variable to aggregate",
         choices = variable_choices,
         multiple = FALSE
       )
@@ -84,7 +79,7 @@ output$func_to_apply <- renderUI({
       return(
         selectInput(
           "func_to_apply",
-          label = "choose func",
+          label = "Choose aggregation method",
           choices = c("sum", "max", "min", "mean"),
           multiple = FALSE
         )
@@ -93,7 +88,7 @@ output$func_to_apply <- renderUI({
       return(
         selectInput(
           "func_to_apply",
-          label = "choose func",
+          label = "Choose a level to mark TRUE for the period",
           choices = levels(selectedvar),
           multiple = TRUE
         )
@@ -246,8 +241,6 @@ observeEvent(input$save_newvar_btn, {
   
 })
 
-#output$show_newconstant_structure <- renderUI({actionButton("show_newconstant_structure", "Show structure")})
-#observeEvent(input$show_newconstant_structure, {
 output$structure <-
   renderPrint({
     str(datasets$constant_data)

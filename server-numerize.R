@@ -2,7 +2,7 @@ output$dataset_numerize <- renderUI({
     #dataset choice UI element
     selectInput(
         "dataset_numerize",
-        label = "choose data",
+        label = "Choose Data",
         choices = c("patient data", "visit data"),
         selected = "patient data",
         multiple = FALSE
@@ -17,7 +17,7 @@ output$variable_choice_numerize <-
             if (input$dataset_numerize == "patient data") {
                 selectInput(
                     "vars_to_numerize",
-                    label = "choose vars",
+                    label = "Choose a categorical variable to convert to numeric",
                     choices = names(cbind(
                         select_if(datasets$constant_data, is.factor)
                     )),
@@ -26,7 +26,7 @@ output$variable_choice_numerize <-
             } else if (input$dataset_numerize == "visit data") {
                 selectInput(
                     "vars_to_numerize",
-                    label = "choose vars",
+                    label = "Choose a categorical variable to convert to numeric",
                     choices = names(cbind(
                         select_if(datasets$nonconstant_data, is.factor)
                     )),
@@ -45,14 +45,14 @@ output$numerize_order <-
             if (input$dataset_numerize == "patient data") {
                 selectInput(
                     "numerize_order",
-                    label = "choose order of values to be translated to numeric",
+                    label = "Choose the order of values to be translated to numeric. The first value corresponds to numeric value 1",
                     choices = levels(datasets$constant_data[, input$vars_to_numerize]),
                     multiple = TRUE
                 )
             } else if (input$dataset_numerize == "visit data") {
                 selectInput(
                     "numerize_order",
-                    label = "choose order of values to be translated to numeric",
+                    label = "Choose the order of values to be translated to numeric. The first value corresponds to numeric value 1",
                     choices = levels(datasets$nonconstant_data[, input$vars_to_numerize]),
                     multiple = TRUE
                 )

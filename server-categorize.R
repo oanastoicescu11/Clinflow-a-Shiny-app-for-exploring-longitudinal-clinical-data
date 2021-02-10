@@ -16,7 +16,7 @@ output$variable_choice_categorize <- renderUI({
     if (input$dataset_categorize == "patient data") {
       selectInput(
         "vars_to_categorize",
-        label = "choose vars",
+        label = "Choose a numeric variable to translate into categorical intervals.",
         choices = names(cbind(
           select_if(datasets$constant_data, is.numeric)
         )),
@@ -25,7 +25,7 @@ output$variable_choice_categorize <- renderUI({
     } else if (input$dataset_categorize == "visit data") {
       selectInput(
         "vars_to_categorize",
-        label = "choose vars",
+        label = "Choose a numeric variable to translate into categorical intervals.",
         choices = names(cbind(
           select_if(datasets$nonconstant_data, is.numeric)
         )),
