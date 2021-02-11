@@ -632,6 +632,9 @@ output$layeredplot <- renderPlotly({
   if (input$panel_color != "Do not color") {
     panel[, input$panel_color] <- as.factor(panel[, input$panel_color])
   }
+  if (input$panel_shape != "No shapes") {
+    panel[, input$panel_shape] <- as.factor(panel[, input$panel_shape])
+  }
   layeredplot <-
     panel %>% highlight_key( ~ code) %>% ggplot(
       .,
