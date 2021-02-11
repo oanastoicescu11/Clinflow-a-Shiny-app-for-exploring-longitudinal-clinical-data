@@ -629,7 +629,9 @@ output$layeredplot <- renderPlotly({
   panel <- panel_data()
   x <- input$panel_x
   y <- input$panel_y
-  
+  if (input$panel_color != "Do not color") {
+    panel[, input$panel_color] <- as.factor(panel[, input$panel_color])
+  }
   layeredplot <-
     panel %>% highlight_key( ~ code) %>% ggplot(
       .,
@@ -641,7 +643,6 @@ output$layeredplot <- renderPlotly({
     geom_point() +
     theme(legend.position = "bottom")
   if (input$panel_color != "Do not color") {
-    panel[, input$panel_color] <- as.factor(panel[, input$panel_color])
     layeredplot <-
       (layeredplot + aes_string(colour = input$panel_color))
   }
