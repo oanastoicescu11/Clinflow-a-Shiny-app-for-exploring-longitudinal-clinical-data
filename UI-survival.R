@@ -1,6 +1,7 @@
 tabPanel(
     "Survival",
     
+    # Application title.
     headerPanel(""),
     
     sidebarPanel(

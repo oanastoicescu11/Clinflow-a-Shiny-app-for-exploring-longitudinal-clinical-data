@@ -227,12 +227,6 @@ prepareData <- function(data) {
             duration = NULL,
             type = "error"
         )
-    }else if(any(is.na(mat))){
-        showNotification(
-            "Warning: Your dataset contains missing values! Clustering methods require ONLY complete cases. Consider treating the missing values in your data.",
-            duration = NULL,
-            type = "error"
-        )
     }
     
     attr(data, 'class') <- 'data.frame'
