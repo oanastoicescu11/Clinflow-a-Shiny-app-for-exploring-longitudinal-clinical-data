@@ -4,7 +4,7 @@ This Shiny app is dedicated to analyzing clinical data, more specifically, longi
 The app includes filtering, feature construction and outlier treatment, and a platform for visualizing different analyses.
 The end goal is to facilitate the user to explore data, collect subsets of data based on their research hypothesis, extract new information and perform analyses. 
 
-Disclaimer: This application has been developed with a specific dataset format in mind. It might not fit all types of data. The author does not assume any responsibility if the results are not what you expect.
+Disclaimer: This application has been developed with a specific dataset format in mind. It might not fit all types of data. The author does not assume any responsibility if the results are not what you expected.
 
 ## Online demo
 An online demo of this app can be found [here](https://oanastoicescu11.shinyapps.io/Clinflow-a-Shiny-app-for-exploring-longitudinal-clinical-data/)
