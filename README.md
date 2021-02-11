@@ -11,8 +11,8 @@ An online demo of this app can be found [here](https://oanastoicescu11.shinyapps
 
 ## To run locally:
 - Install the R software on your computer. R version 3.6.3 can be found [here]( https://cran.r-project.org/bin/windows/base/old/3.6.3/)
-- Download the source code files in a folder on your computer. 
-- open R and set that folder as your working directory using the command `setwd("C:/<your folder path here>")`
-- Install the packages using the Libraries.R file with the command `source("Libraries.R")`
+- Download the source code files and extract them in a folder on your computer. 
+- open R and set that folder as your working directory using the command `setwd("C:/<your folder path here>")`.
+- Install the required packages using the Libraries.R file with the command `source("Libraries.R")`. This will take a few minutes, and it might ask you for input.
 - Run the app with the command:
   `shiny::runApp(launch.browser = TRUE)` to run the app in your default browser that supports WebGL (recommended: Google Chrome, Mozilla Firefox)
