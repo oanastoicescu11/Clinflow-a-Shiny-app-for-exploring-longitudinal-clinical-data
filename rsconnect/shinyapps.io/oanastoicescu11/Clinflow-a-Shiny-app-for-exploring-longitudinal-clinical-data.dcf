@@ -1,0 +1,13 @@
+name: Clinflow-a-Shiny-app-for-exploring-longitudinal-clinical-data
+title: Clinflow-a-Shiny-app-for-exploring-longitudinal-clinical-data
+username:
+account: oanastoicescu11
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3614033
+bundleId: 4206944
+url: https://oanastoicescu11.shinyapps.io/Clinflow-a-Shiny-app-for-exploring-longitudinal-clinical-data/
+when: 1612983321.27679
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md|requirements.txt
