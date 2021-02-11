@@ -5,9 +5,10 @@
 #
 
 #load or install libraries-
+library("dashboardthemes")
+library("shinydashboard")
 library("shiny")
 library("shinythemes")
-library("dashboardthemes")
 library("shinyjs")
 library("shinyWidgets")
 library("plyr")
@@ -31,7 +32,6 @@ library("jsonlite")
 library("stringi")
 library("rlang")
 library("htmlwidgets")
-library("shinydashboard")
 library("DT")
 library("naniar")
 library("ggplot2")
