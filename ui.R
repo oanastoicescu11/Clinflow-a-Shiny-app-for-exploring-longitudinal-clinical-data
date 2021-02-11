@@ -1,10 +1,13 @@
-
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
 # Find out more about building applications with Shiny here:
 #
 #    http://shiny.rstudio.com/
 #
+#Function To check if libraries are installed and load/install them
 
-#load or install libraries-
 library("dashboardthemes")
 library("shinydashboard")
 library("shiny")
@@ -61,11 +64,12 @@ library("ggforce")
 library("survival")
 library("survminer")
 library("forestmodel")
-
+library("devtools")
 library("AppliedPredictiveModeling")
 library("ellipse")
 library("BiocManager")
 library("pcaMethods")
+
 
 
 shinyUI(tagList(
@@ -83,7 +87,6 @@ shinyUI(tagList(
         source("ui-panel.R", local = TRUE)$value,
         source("UI-survival.R", local = TRUE)$value,
         source("ui-documentation.R", local = TRUE)$value
-        
       )
     )
   )

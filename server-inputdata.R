@@ -6,13 +6,8 @@ original_data <- reactive({
         inFile <- input$file1
         if (is.null(inFile)) {
             return(NULL)
-            df <-
-                read.csv(
-                    inFile$datapath,
-                    header = TRUE,
-                    sep = input$sep,
-                    stringsAsFactors = TRUE
-                )
+        }else{
+            df <- read.csv(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE)
         }
     } else{
         df <- survival::pbcseq
@@ -65,7 +60,11 @@ output$upload_options <- renderUI(if (input$own_data == TRUE) {
 })
 #render table and summaries
 output$table_input <- DT::renderDT({
-    original_data()
+    if(!is.null(original_data())){
+        original_data()
+    }else{
+        NULL
+    }
 }, options = list(pageLength = 5))
 
 

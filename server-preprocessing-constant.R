@@ -61,6 +61,7 @@ constant_data <- reactive({
                detail = "...",
                {
                  if (!is.null(visit_data())) {
+                   req(exists(input$choose_id, where = visit_data()))
                    const <- data.frame(create_constant_table(visit_data()))
                    setProgress(value = 1, detail = "done!")
                    rownames(const) <- c(1:nrow(const))

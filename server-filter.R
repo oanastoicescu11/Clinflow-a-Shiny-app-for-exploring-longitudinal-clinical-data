@@ -40,6 +40,8 @@ observe({
             if (exists(input$choose_id, where = data)) {
                 nonconstcols <-
                     as.vector(find_nonconstant_cols(data, input$choose_id))
+            }else{
+                nonconstcols <- NULL
             }
             nonconstdata <- as.data.frame(data[, nonconstcols])
             #put only the time variable columns in a reactive value

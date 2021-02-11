@@ -2,7 +2,7 @@ output$dataset_categorize <- renderUI({
   #dataset choice UI element
   selectInput(
     "dataset_categorize",
-    label = "choose data",
+    label = "Choose data",
     choices = c("patient data", "visit data"),
     selected = "patient data",
     multiple = FALSE

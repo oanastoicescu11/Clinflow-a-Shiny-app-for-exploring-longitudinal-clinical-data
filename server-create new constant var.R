@@ -47,7 +47,7 @@ output$newvar_params <- renderUI({
       ))
     req(input$var_range)
     tagList(
-      
+
       sliderInput(
         "age_range",
         label = "Select time range of visits to aggregate",
@@ -241,6 +241,8 @@ observeEvent(input$save_newvar_btn, {
   
 })
 
+#output$show_newconstant_structure <- renderUI({actionButton("show_newconstant_structure", "Show structure")})
+#observeEvent(input$show_newconstant_structure, {
 output$structure <-
   renderPrint({
     str(datasets$constant_data)
