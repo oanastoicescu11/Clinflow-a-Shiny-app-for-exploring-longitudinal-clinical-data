@@ -7,8 +7,13 @@ original_data <- reactive({
         if (is.null(inFile)) {
             return(NULL)
         }else{
-            df <- read.csv(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE)
+            df <- data.frame(read.table(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE))
         }
+        
+        if(is.null(ncol(df))|ncol(df)==0){
+            df <- NULL
+        }
+        showNotification("Your data frame has dimension 0. Upload a valid dataframe and choose the appropriate separator.")
     } else{
         df <- survival::pbcseq
     }
@@ -39,17 +44,6 @@ output$upload_options <- renderUI(if (input$own_data == TRUE) {
                 "text/comma-separated-values,text/plain",
                 ".csv"
             )
-        ),
-        
-        tags$hr(),
-        
-        # Input: Select number of rows to display ----
-        radioButtons(
-            "disp",
-            "Display",
-            choices = c(Head = "head",
-                        All = "all"),
-            selected = "head"
         )
     )
 } else{
