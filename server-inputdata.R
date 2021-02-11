@@ -7,14 +7,26 @@ original_data <- reactive({
         if (is.null(inFile)) {
             return(NULL)
         }else{
-            df <- data.frame(read.table(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE))
+            mtry <- try(read.table(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE), 
+                        silent = TRUE)
+            
+            if (class(mtry) != "try-error") {
+                df <- data.frame(read.table(inFile$datapath, header = TRUE,sep = input$sep, stringsAsFactors = FALSE))
+            } else {
+                df <- NULL
+                showNotification("Your data frame's format is incorrect. Choose the appropriate separator in the left panel or upload a different dataset.", 
+                                 duration = NULL, type = "error")
+            }
+            if(!is.null(df)){
+                if(is.null(ncol(df))|ncol(df)<=1){
+                    showNotification("Your data frame's format is incorrect. Upload a valid dataframe and choose the appropriate separator in the left panel.", 
+                                     duration = NULL, type = "error")
+                }
+            }
         }
         
-        if(is.null(ncol(df))|ncol(df)==0){
-            df <- NULL
-        }
-        showNotification("Your data frame has dimension 0. Upload a valid dataframe and choose the appropriate separator.")
-    } else{
+        
+    }else{
         df <- survival::pbcseq
     }
     return(df)

@@ -67,6 +67,6 @@ tabPanel(
                         HTML(PANEL)),
         tags$h3("Survival"),
         shiny::tags$div(class = "container-fluid shiny-code-container well",
-                        HTML(SURVIVAL))
+                        HTML(SURVIVAL, '<br/>'))
     )
 )
