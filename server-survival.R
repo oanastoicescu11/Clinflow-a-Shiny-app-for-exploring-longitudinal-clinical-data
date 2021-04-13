@@ -244,7 +244,9 @@ data_for_cox <- reactive({
                     ",",
                     newcol_name,
                     ")~",
+                    "strata(",
                     input$survgroup,
+                    ")",
                     "+",
                     paste(input$survlayer, collapse = "+"),
                     sep = ""

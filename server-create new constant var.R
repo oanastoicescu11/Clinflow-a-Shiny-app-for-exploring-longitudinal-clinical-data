@@ -127,8 +127,8 @@ create_new_var <-
               visit[, var_to_apply_func] ~ visit[, input$choose_id],
               data = visit,
               FUN = func_to_apply,
-              na.rm = T,
-              na.action = na.pass
+              na.rm = T
+              #na.action = na.pass
             ),
             c(input$choose_id, newvar_name)
           )
@@ -209,7 +209,7 @@ observeEvent(input$update, {
       if (all(is.na(newconstants[, input$newvar_name]))) {
         output$norows <-
           renderPrint(print(
-            "No visits in that age rage for any patient. NA added for all rows"
+            "No visits in that range for any patient. NA added for all rows"
           ))
       } else{
         output$norows <- NULL
